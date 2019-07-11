@@ -7,7 +7,7 @@ eureka:
       defaultZone: http://localhost:8061/eureka/
       
 spring:
-  datasource.
+  datasource:
     url: jdbc:mysql://localhost/run
     username: root
     password: c7o2r1e4
