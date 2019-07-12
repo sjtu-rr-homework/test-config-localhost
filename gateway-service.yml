@@ -2,14 +2,9 @@ server:
   port: 8060
 
 eureka:
-  instance:
-    hostname: gateway-service
-    prefer-ip-address: true
   client:
-    register-with-eureka: true
-    fetch-registry: true
     serviceUrl:
-      defaultZone: http://discovery-service:8061/eureka/
+      defaultZone: http://localhost:8061/eureka/
 
 logging:
   pattern: 
