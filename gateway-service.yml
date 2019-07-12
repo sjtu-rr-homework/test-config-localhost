@@ -35,3 +35,9 @@ spring:
         - Path=/user/**
         filters:
         - RewritePath=/user/(?<path>.*), /$\{path}
+      - id: pet-service
+        uri: lb://pet-service
+        predicates:
+        - Path=/pet/**
+        filters:
+        - RewritePath=/pet/(?<path>.*), /$\{path}
