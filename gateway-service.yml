@@ -35,3 +35,9 @@ spring:
         - Path=/record/**
         filters:
         - RewritePath=/record/(?<path>.*), /$\{path}
+      - id: location-service
+        uri: lb://location-service
+        predicates:
+        - Path=/location/**
+        filters:
+        - RewritePath=/location/(?<path>.*), /$\{path}
