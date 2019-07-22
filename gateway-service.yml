@@ -23,21 +23,37 @@ spring:
         - Path=/user/**
         filters:
         - RewritePath=/user/(?<path>.*), /$\{path}
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
       - id: pet-service
         uri: lb://pet-service
         predicates:
         - Path=/pet/**
         filters:
         - RewritePath=/pet/(?<path>.*), /$\{path}
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
       - id: record-service
         uri: lb://record-service
         predicates:
         - Path=/record/**
         filters:
         - RewritePath=/record/(?<path>.*), /$\{path}
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
       - id: location-service
         uri: lb://location-service
         predicates:
         - Path=/location/**
         filters:
         - RewritePath=/location/(?<path>.*), /$\{path}
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
