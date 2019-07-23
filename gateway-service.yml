@@ -57,3 +57,14 @@ spring:
           args:
             name: fallbackcmd
             fallbackUri: forward:/fallback
+      - id: rule-service
+        uri: lb://rule-service
+        predicates:
+        - Path=/rule/**
+        filters:
+        - RewritePath=/rule/(?<path>.*), /$\{path}
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
+
