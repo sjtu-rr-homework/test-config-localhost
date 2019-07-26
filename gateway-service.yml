@@ -13,6 +13,14 @@ logging:
 spring:
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - OPTIONS
+              - POST
       discovery:
         locator:
           enabled: true
