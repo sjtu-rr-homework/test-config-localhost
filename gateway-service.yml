@@ -19,7 +19,6 @@ spring:
             allowedOrigins: "*"
             allowedMethods:
               - GET
-              - OPTIONS
               - POST
       discovery:
         locator:
