@@ -2,9 +2,23 @@ server:
   port: 8093
 
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      startup: ${random.int}   
   client:
+    registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://localhost:8061/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  
+  endpoint:
+    health:
+      show-details: ALWAYS
       
 spring:
   datasource:
