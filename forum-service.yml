@@ -8,7 +8,6 @@ eureka:
       defaultZone: http://localhost:8061/eureka/
       
 spring:
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/moment
+  data.mongodb:
+    uri: mongodb://localhost:27017/moment
   
