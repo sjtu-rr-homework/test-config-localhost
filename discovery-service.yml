@@ -16,3 +16,4 @@ spring:
   boot:
     admin:
       context-path: /admin
+      url=http://localhost:8061
