@@ -67,4 +67,14 @@ spring:
           args:
             name: fallbackcmd
             fallbackUri: forward:/fallback
+      - id: forum-service
+        uri: lb://forum-service
+        predicates:
+        - Path=/forum/**
+        filters:
+        - RewritePath=/forum/(?<path>.*), /$\{path}
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
 
