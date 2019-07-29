@@ -10,4 +10,4 @@ eureka:
 spring:
   data.mongodb:
     uri: mongodb://localhost:27017/moment
-  
+  autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
