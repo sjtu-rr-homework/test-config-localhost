@@ -27,3 +27,6 @@ zuul:
     rule-service:
       path: /rule/**
       serviceId: rule-service
+    forum-service:
+      path: /forum/**
+      serviceId: forum-service
