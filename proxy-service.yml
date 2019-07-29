@@ -30,3 +30,11 @@ zuul:
     forum-service:
       path: /forum/**
       serviceId: forum-service
+      
+hystrix:
+  command:
+    myusers-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
