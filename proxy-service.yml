@@ -21,6 +21,7 @@ management:
       show-details: ALWAYS
               
 zuul:
+  prefix: /api
   routes:
     user-service:
       path: /user/**
